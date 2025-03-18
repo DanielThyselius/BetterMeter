@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterMeter.Core", "BetterMeter.Core\BetterMeter.Core.csproj", "{B2C7D93F-C3D5-496A-9E00-A671AC066049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterMeter.Api", "BetterMeter.Api\BetterMeter.Api.csproj", "{555468DE-4E33-4788-A54F-B2077BECD974}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2C7D93F-C3D5-496A-9E00-A671AC066049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C7D93F-C3D5-496A-9E00-A671AC066049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C7D93F-C3D5-496A-9E00-A671AC066049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C7D93F-C3D5-496A-9E00-A671AC066049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555468DE-4E33-4788-A54F-B2077BECD974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555468DE-4E33-4788-A54F-B2077BECD974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555468DE-4E33-4788-A54F-B2077BECD974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555468DE-4E33-4788-A54F-B2077BECD974}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D78D1D9-37A7-48B5-950E-2D6BC1A84957}
+	EndGlobalSection
+EndGlobal
