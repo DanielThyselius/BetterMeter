@@ -1,0 +1,36 @@
+﻿@page "/"
+@inject HttpClient client;
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+@* todo: 
+    [x] get all questions 
+    [x] Print titles
+    
+*@
+<button class="btn btn-primary" @onclick="GetQuestions">Click me</button>
+
+@foreach (var question in questions)
+{
+    <Question></Question>
+}
+
+@code {
+    private List<Response> questions = new List<Response>();
+
+    private async Task GetQuestions()
+    {
+        questions = await client.GetFromJsonAsync<List<Response>>("https://localhost:7101/api/questions");
+    }
+
+    public record Response(
+        int Id,
+        string Title,
+        string Answer,
+        int Points,
+        int Time,
+        bool IsOpenEnded
+    );
+}

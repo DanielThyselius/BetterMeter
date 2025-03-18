@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterMeter.Core", "BetterM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterMeter.Api", "BetterMeter.Api\BetterMeter.Api.csproj", "{555468DE-4E33-4788-A54F-B2077BECD974}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterMeter.Client", "BetterMeter.Client\BetterMeter.Client.csproj", "{090E1C84-9124-4F7C-8281-E2975771AFB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{555468DE-4E33-4788-A54F-B2077BECD974}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{555468DE-4E33-4788-A54F-B2077BECD974}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{555468DE-4E33-4788-A54F-B2077BECD974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090E1C84-9124-4F7C-8281-E2975771AFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090E1C84-9124-4F7C-8281-E2975771AFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090E1C84-9124-4F7C-8281-E2975771AFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090E1C84-9124-4F7C-8281-E2975771AFB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

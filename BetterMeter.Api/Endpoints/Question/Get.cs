@@ -3,8 +3,8 @@ public class GetEvent : IEndpoint
 {
     // Mapping
     public static void MapEndpoint(IEndpointRouteBuilder app) => app
-        .MapGet("/events/{id}", Handle)
-        .WithSummary("Get event");
+        .MapGet("/api/questions/{id}", Handle)
+        .WithSummary("Get question");
 
     // Request and Response types
     public record Request(int Id);

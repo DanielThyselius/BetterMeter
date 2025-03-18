@@ -12,6 +12,16 @@ builder.Services.AddOpenApi();
 builder.Services.AddSingleton<IDatabase, Database>();
 builder.Services.AddScoped<IQuestionService, QuestionService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 // Add cookie authentication
 builder.Services.AddAuthentication("Cookies")
     .AddCookie("Cookies", options =>
@@ -24,6 +34,8 @@ builder.Services.AddAuthentication("Cookies")
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+app.UseCors();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

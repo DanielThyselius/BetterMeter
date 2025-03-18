@@ -5,8 +5,8 @@ public class CreateEvent : IEndpoint
 {
     // Mapping
     public static void MapEndpoint(IEndpointRouteBuilder app) => app
-        .MapPost("/events", Handle)
-        .WithSummary("Create event");
+        .MapPost("/api/questions", Handle)
+        .WithSummary("Create question");
 
     // Request and Response types
     // Why do we need these? check this video if you are not sure
