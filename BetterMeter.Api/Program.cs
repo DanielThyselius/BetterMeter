@@ -1,6 +1,4 @@
 using BetterMeter.Api.Endpoints;
-using BetterMeter.Core.Services;
-using BetterMeter.Core.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,3 +56,5 @@ app.UseAuthorization();
 app.MapEndpoints<Program>();
 
 app.Run();
+
+public partial class Program { }

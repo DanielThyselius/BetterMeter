@@ -15,4 +15,8 @@
     <ProjectReference Include="..\BetterMeter.Core\BetterMeter.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="BetterMeter.Tests" />
+  </ItemGroup>
+
 </Project>
