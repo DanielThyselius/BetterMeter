@@ -1,5 +1,10 @@
-﻿<h3>Question</h3>
-
-@code {
-
-}
+﻿<div>
+    <h3>Q: @Title</h3>
+    <ol>
+        @foreach (var item in Alternatives)
+        {
+            <li>@item</li>
+        }
+    </ol>
+    <p>värd @Points poäng</p>
+</div>

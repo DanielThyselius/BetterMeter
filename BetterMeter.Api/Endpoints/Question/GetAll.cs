@@ -13,7 +13,8 @@ public class GetAllEvents : IEndpoint
         string Answer,
         int Points,
         int Time,
-        bool IsOpenEnded
+        bool IsOpenEnded,
+        List<string> Alternatives
     );
 
     //Logic
@@ -26,7 +27,8 @@ public class GetAllEvents : IEndpoint
                 Answer: item.Answer,
                 Points: item.Points,
                 Time: item.SecondsToAnswer,
-                IsOpenEnded: item.IsOpenEnded
+                IsOpenEnded: item.IsOpenEnded,
+                Alternatives: item.Alternatives
             )).ToList();
     }
 }
