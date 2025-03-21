@@ -1,9 +1,10 @@
 ﻿namespace BetterMeter.Api.Endpoints;
-public class GetEvent : IEndpoint
+public class GetQuestion : IEndpoint
 {
     // Mapping
-    public static void MapEndpoint(IEndpointRouteBuilder app) => app
+    public static void MapEndpoint(IEndpointRouteBuilder app) =>  app
         .MapGet("/api/questions/{id}", Handle)
+        .RequireAuthorization()
         .WithSummary("Get question");
 
     // Request and Response types

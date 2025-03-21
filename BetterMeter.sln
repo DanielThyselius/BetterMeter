@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterMeter.Client", "Bette
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterMeter.Tests", "BetterMeter.Tests\BetterMeter.Tests.csproj", "{8586EFDA-5544-482E-8B34-27C34A2A40EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterMeter.Infrastructure", "BetterMeter.Infrastructure\BetterMeter.Infrastructure.csproj", "{30A756DA-E530-4F58-904D-0DBBFF52B155}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8586EFDA-5544-482E-8B34-27C34A2A40EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8586EFDA-5544-482E-8B34-27C34A2A40EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8586EFDA-5544-482E-8B34-27C34A2A40EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30A756DA-E530-4F58-904D-0DBBFF52B155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A756DA-E530-4F58-904D-0DBBFF52B155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A756DA-E530-4F58-904D-0DBBFF52B155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A756DA-E530-4F58-904D-0DBBFF52B155}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

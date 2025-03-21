@@ -1,4 +1,9 @@
 using BetterMeter.Api.Endpoints;
+using BetterMeter.Infrastructure;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 // Default mapping is /openapi/v1.json
 builder.Services.AddOpenApi();
+
+builder.Services.AddDbContext<BetterMeterDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddSingleton<IDatabase, Database>();
 builder.Services.AddScoped<IQuestionService, QuestionService>();
@@ -21,21 +29,19 @@ builder.Services.AddCors(options =>
 });
 
 // Add cookie authentication
-builder.Services.AddAuthentication("Cookies")
-    .AddCookie("Cookies", options =>
-    {
-        options.Cookie.Name = "auth";
-        options.Cookie.HttpOnly = true;
-        options.Cookie.SameSite = SameSiteMode.Strict;
-    });
-
+builder.Services.AddAuthentication()
+    .AddCookie(IdentityConstants.ApplicationScheme);
 builder.Services.AddAuthorization();
+
+builder.Services.AddIdentityCore<IdentityUser>()
+    .AddEntityFrameworkStores<BetterMeterDbContext>()
+    .AddApiEndpoints();
 
 var app = builder.Build();
 
-app.UseCors();
-
 // Configure the HTTP request pipeline.
+
+app.UseCors();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -54,6 +60,7 @@ app.UseAuthorization();
 
 // Map all endpoints
 app.MapEndpoints<Program>();
+app.MapIdentityApi<IdentityUser>();
 
 app.Run();
 

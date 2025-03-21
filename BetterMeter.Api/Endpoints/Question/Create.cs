@@ -1,7 +1,7 @@
 ﻿using BetterMeter.Core.Models;
 
 namespace BetterMeter.Api.Endpoints;
-public class CreateEvent : IEndpoint
+public class CreateQuestion : IEndpoint
 {
     // Mapping
     public static void MapEndpoint(IEndpointRouteBuilder app) => app

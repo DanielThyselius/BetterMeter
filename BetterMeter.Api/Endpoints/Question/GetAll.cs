@@ -1,5 +1,5 @@
 ﻿namespace BetterMeter.Api.Endpoints;
-public class GetAllEvents : IEndpoint
+public class GetAllQuestions : IEndpoint
 {
     // Mapping
     public static void MapEndpoint(IEndpointRouteBuilder app) => app
