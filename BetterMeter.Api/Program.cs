@@ -3,7 +3,9 @@ using BetterMeter.Infrastructure;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,9 +24,10 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.AllowAnyOrigin()
+        builder.WithOrigins("https://localhost:7102")
             .AllowAnyMethod()
-            .AllowAnyHeader();
+            .AllowAnyHeader()
+            .AllowCredentials();
     });
 });
 
@@ -61,6 +64,46 @@ app.UseAuthorization();
 // Map all endpoints
 app.MapEndpoints<Program>();
 app.MapIdentityApi<IdentityUser>();
+
+// Temporary endpoints
+// Todo: Move to own files
+
+// For more information on the logout endpoint and antiforgery, see:
+// https://learn.microsoft.com/aspnet/core/blazor/security/webassembly/standalone-with-identity#antiforgery-support
+app.MapPost("/logout", async (SignInManager<IdentityUser> signInManager, [FromBody] object empty) =>
+{
+    if (empty is not null)
+    {
+        await signInManager.SignOutAsync();
+
+        return Results.Ok();
+    }
+
+    return Results.Unauthorized();
+}).RequireAuthorization();
+
+
+// provide an endpoint for user roles
+app.MapGet("/roles", (ClaimsPrincipal user) =>
+{
+    if (user.Identity is null || !user.Identity.IsAuthenticated)
+        return Results.Unauthorized();
+
+    var identity = (ClaimsIdentity)user.Identity;
+    var roles = identity.FindAll(identity.RoleClaimType)
+        .Select(c =>
+            new
+            {
+                c.Issuer,
+                c.OriginalIssuer,
+                c.Type,
+                c.Value,
+                c.ValueType
+            });
+
+    return TypedResults.Json(roles);
+}).RequireAuthorization();
+
 
 app.Run();
 

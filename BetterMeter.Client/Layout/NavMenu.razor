@@ -27,15 +27,12 @@
         <AuthorizeView>
             <Authorized>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="private-page">
-                        <span class="bi bi-key" aria-hidden="true"></span> Private Page
-                    </NavLink>
-                </div>
-                <div class="nav-item px-3">
                     <NavLink class="nav-link" href="private-manager-page">
                         <span class="bi bi-key" aria-hidden="true"></span> Private Manager Page
                     </NavLink>
                 </div>
+            </Authorized>
+            <Authorized>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="private-editor-page">
                         <span class="bi bi-key" aria-hidden="true"></span> Private Editor Page
@@ -43,7 +40,9 @@
                 </div>
             </Authorized>
             <NotAuthorized>
-                You shall not pass!
+                <div class="nav-item px-3">
+                    You shall not pass!
+                </div>
             </NotAuthorized>
         </AuthorizeView>
     </nav>
